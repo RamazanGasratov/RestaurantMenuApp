@@ -22,7 +22,14 @@ class MainViewController: UIViewController {
         navigationBar()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+//        UIFont.familyNames.forEach ({
+//                  print($0)
+//                  UIFont.fontNames(forFamilyName: $0).forEach ({ name in
+//                       print("       " + name)
+//                   })
+//               })
+
     }
  
     
@@ -58,11 +65,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath)
-        cell.textLabel?.text = restaurantNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {return UITableViewCell()}
+        cell.nameRestLabel.text = restaurantNames[indexPath.row]
+        cell.imageViewRest.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageViewRest.layer.cornerRadius = cell.imageViewRest.frame.size.height / 2
+        cell.imageViewRest.clipsToBounds = true
         return cell
     }
     

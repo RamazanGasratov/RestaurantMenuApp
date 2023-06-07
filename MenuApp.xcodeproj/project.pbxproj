@@ -13,6 +13,8 @@
 		FAF4728A2A30657300824AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF472892A30657300824AFB /* Assets.xcassets */; };
 		FAF4728D2A30657300824AFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */; };
 		FAF472962A306C9E00824AFB /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472952A306C9E00824AFB /* MainTableViewCell.swift */; };
+		FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472972A30CB0100824AFB /* StackView+Ext.swift */; };
+		FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472992A30CB0800824AFB /* UILabel + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FAF4728C2A30657300824AFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAF4728E2A30657300824AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF472952A306C9E00824AFB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		FAF472972A30CB0100824AFB /* StackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView+Ext.swift"; sourceTree = "<group>"; };
+		FAF472992A30CB0800824AFB /* UILabel + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				FAF472892A30657300824AFB /* Assets.xcassets */,
 				FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */,
 				FAF4728E2A30657300824AFB /* Info.plist */,
+				FAF472972A30CB0100824AFB /* StackView+Ext.swift */,
+				FAF472992A30CB0800824AFB /* UILabel + Ext.swift */,
 			);
 			path = MenuApp;
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */,
 				FAF472852A30657100824AFB /* MainViewController.swift in Sources */,
+				FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */,
 				FAF472812A30657100824AFB /* AppDelegate.swift in Sources */,
 				FAF472962A306C9E00824AFB /* MainTableViewCell.swift in Sources */,
 				FAF472832A30657100824AFB /* SceneDelegate.swift in Sources */,
