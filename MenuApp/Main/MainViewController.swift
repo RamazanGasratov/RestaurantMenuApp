@@ -11,10 +11,7 @@ class MainViewController: UIViewController {
     
     private let tableView = UITableView()
     
-    let restaurantNames = [
-         "Kitchen", "Bonsai", "Вкусочка", "Индокитай", "Sultan Burger", "Speak Easy", "Классик", "Националь", "Вкусные истории", "Асса", "Рандеву"]
-    
-
+    private var model = ModelMain.getPlaces()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -60,14 +57,16 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        restaurantNames.count
+        model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {return UITableViewCell()}
-        cell.nameRestLabel.text = restaurantNames[indexPath.row]
-        cell.imageViewRest.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.localLabel.text = model[indexPath.row].location
+        cell.typeLabel.text = model[indexPath.row].type
+        cell.nameRestLabel.text = model[indexPath.row].name
+        cell.imageViewRest.image = UIImage(named: model[indexPath.row].image)
         cell.imageViewRest.layer.cornerRadius = cell.imageViewRest.frame.size.height / 2
         cell.imageViewRest.clipsToBounds = true
         return cell

@@ -15,6 +15,7 @@
 		FAF472962A306C9E00824AFB /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472952A306C9E00824AFB /* MainTableViewCell.swift */; };
 		FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472972A30CB0100824AFB /* StackView+Ext.swift */; };
 		FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472992A30CB0800824AFB /* UILabel + Ext.swift */; };
+		FAF4729D2A30D47E00824AFB /* ModelMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4729C2A30D47E00824AFB /* ModelMain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FAF472952A306C9E00824AFB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		FAF472972A30CB0100824AFB /* StackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView+Ext.swift"; sourceTree = "<group>"; };
 		FAF472992A30CB0800824AFB /* UILabel + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Ext.swift"; sourceTree = "<group>"; };
+		FAF4729C2A30D47E00824AFB /* ModelMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				FAF472802A30657100824AFB /* AppDelegate.swift */,
 				FAF472822A30657100824AFB /* SceneDelegate.swift */,
+				FAF4729B2A30D46300824AFB /* Model */,
 				FAF472942A306C7E00824AFB /* Main */,
 				FAF472892A30657300824AFB /* Assets.xcassets */,
 				FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */,
@@ -79,6 +82,14 @@
 				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FAF4729B2A30D46300824AFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4729C2A30D47E00824AFB /* ModelMain.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */,
+				FAF4729D2A30D47E00824AFB /* ModelMain.swift in Sources */,
 				FAF472852A30657100824AFB /* MainViewController.swift in Sources */,
 				FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */,
 				FAF472812A30657100824AFB /* AppDelegate.swift in Sources */,
