@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     private let tableView = UITableView()
     
     let restaurantNames = [
-        "Burger Heroes", "Kitchen", "Bonsai", "Вкусочка", "Индокитай", "Sultan Burger", "Speak Easy", "Классик", "Националь", "Вкусные истории", "Асса", "Рандеву"]
+         "Kitchen", "Bonsai", "Вкусочка", "Индокитай", "Sultan Burger", "Speak Easy", "Классик", "Националь", "Вкусные истории", "Асса", "Рандеву"]
     
 
     override func viewDidLoad() {
@@ -24,10 +24,17 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
     }
+ 
     
     private func navigationBar() {
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationItem.title = "Cell"
+        if let titleFont = UIFont(name: "SnellRoundhand", size: 24) {
+            let titleAttributes = [NSAttributedString.Key.font: titleFont]
+            navigationController?.navigationBar.titleTextAttributes = titleAttributes
+        } else {
+            print("Ошибка: Невозможно создать шрифт")
+        }
+        self.navigationItem.title = "My Places"
     }
 
     
@@ -53,8 +60,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
          let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath)
         cell.textLabel?.text = restaurantNames[indexPath.row]
-        
+        cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        85
     }
     
 }
