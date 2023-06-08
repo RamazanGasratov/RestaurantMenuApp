@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
             print("Ошибка: Невозможно создать шрифт")
         }
         self.navigationItem.title = "My Places"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(pushNewPlace))
     }
 
     
@@ -52,6 +54,11 @@ class MainViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    @objc private func pushNewPlace() {
+        let vc = UINavigationController(rootViewController: PlaceViewController())
+        present(vc, animated: true)
     }
 }
 

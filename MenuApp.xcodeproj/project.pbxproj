@@ -16,6 +16,8 @@
 		FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472972A30CB0100824AFB /* StackView+Ext.swift */; };
 		FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472992A30CB0800824AFB /* UILabel + Ext.swift */; };
 		FAF4729D2A30D47E00824AFB /* ModelMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4729C2A30D47E00824AFB /* ModelMain.swift */; };
+		FAF472A32A30DBFC00824AFB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472A22A30DBFC00824AFB /* PlaceViewController.swift */; };
+		FAF472A62A30DF9500824AFB /* CustomTextFeildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472A52A30DF9500824AFB /* CustomTextFeildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FAF472972A30CB0100824AFB /* StackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView+Ext.swift"; sourceTree = "<group>"; };
 		FAF472992A30CB0800824AFB /* UILabel + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Ext.swift"; sourceTree = "<group>"; };
 		FAF4729C2A30D47E00824AFB /* ModelMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMain.swift; sourceTree = "<group>"; };
+		FAF472A22A30DBFC00824AFB /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		FAF472A52A30DF9500824AFB /* CustomTextFeildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFeildView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +66,9 @@
 		FAF4727F2A30657100824AFB /* MenuApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAF472A02A30DBC500824AFB /* Place */,
 				FAF472802A30657100824AFB /* AppDelegate.swift */,
 				FAF472822A30657100824AFB /* SceneDelegate.swift */,
-				FAF4729B2A30D46300824AFB /* Model */,
 				FAF472942A306C7E00824AFB /* Main */,
 				FAF472892A30657300824AFB /* Assets.xcassets */,
 				FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */,
@@ -78,8 +82,9 @@
 		FAF472942A306C7E00824AFB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FAF472842A30657100824AFB /* MainViewController.swift */,
-				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
+				FAF4729F2A30DBB200824AFB /* View */,
+				FAF4729B2A30D46300824AFB /* Model */,
+				FAF4729E2A30DB8700824AFB /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -90,6 +95,47 @@
 				FAF4729C2A30D47E00824AFB /* ModelMain.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAF4729E2A30DB8700824AFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472842A30657100824AFB /* MainViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FAF4729F2A30DBB200824AFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF472A02A30DBC500824AFB /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472A42A30DF7000824AFB /* View */,
+				FAF472A12A30DBE500824AFB /* Controller */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		FAF472A12A30DBE500824AFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472A22A30DBFC00824AFB /* PlaceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAF472A42A30DF7000824AFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472A52A30DF9500824AFB /* CustomTextFeildView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF472A32A30DBFC00824AFB /* PlaceViewController.swift in Sources */,
 				FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */,
 				FAF4729D2A30D47E00824AFB /* ModelMain.swift in Sources */,
 				FAF472852A30657100824AFB /* MainViewController.swift in Sources */,
@@ -169,6 +216,7 @@
 				FAF472812A30657100824AFB /* AppDelegate.swift in Sources */,
 				FAF472962A306C9E00824AFB /* MainTableViewCell.swift in Sources */,
 				FAF472832A30657100824AFB /* SceneDelegate.swift in Sources */,
+				FAF472A62A30DF9500824AFB /* CustomTextFeildView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
