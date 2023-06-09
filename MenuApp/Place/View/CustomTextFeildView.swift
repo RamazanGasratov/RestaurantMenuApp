@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTextFeildView: UIView {
    
-    private lazy var textField: UITextField = UITextField()
+    lazy var textField: UITextField = UITextField()
     private lazy var nameLabel: UILabel = UILabel(text: "", font: UIFont(name:"AppleSDGothicNeo-Thin" , size: 20) ?? UIFont())
     
     private override init(frame: CGRect) {

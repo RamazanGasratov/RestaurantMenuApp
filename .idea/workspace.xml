@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add MainModel">
-      <change afterPath="$PROJECT_DIR$/MenuApp/Place/Controller/PlaceViewController.swift" afterDir="false" />
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add Realm&#10;- add Sorted Method">
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/AZ.imageset/AZ@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/AZ.imageset/AZ@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/AZ.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/ZA.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/ZA.imageset/ZA@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/Reversed Sorting Icons/ZA.imageset/ZA@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/imagePlaceholder/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/imagePlaceholder/imagePlaceholder.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/imagePlaceholder/imagePlaceholder.imageset/imagePlaceholder@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/Assets.xcassets/imagePlaceholder/imagePlaceholder.imageset/imagePlaceholder@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/SegmentCustom.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/StoregManager.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuApp/UIViewController+Ext.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuApp.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuApp/Main/MainTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Main/View/MainTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp.xcodeproj/xcuserdata/macbook.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp.xcodeproj/xcuserdata/macbook.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/AppDelegate.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuApp/Main/MainViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Main/MainViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuApp/Model/ModelMain.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Main/Model/ModelMain.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/Main/Model/ModelMain.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Main/Model/ModelMain.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/Main/View/MainTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Main/View/MainTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/Place/Controller/PlaceViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Place/Controller/PlaceViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/Place/View/CustomTextFeildView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/Place/View/CustomTextFeildView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuApp/UILabel + Ext.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MenuApp/UILabel + Ext.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +63,9 @@
       <workItem from="1686128465687" duration="55000" />
       <workItem from="1686149493413" duration="38000" />
       <workItem from="1686151103776" duration="293000" />
+      <workItem from="1686228451895" duration="56000" />
+      <workItem from="1686324515309" duration="147000" />
+      <workItem from="1686324746289" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
       <created>1686128509250</created>
@@ -66,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686151117542</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- add picker Photo and Camera">
+      <created>1686228494138</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686228494138</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +117,7 @@
     <MESSAGE value="- add Image and LaunchScreen" />
     <MESSAGE value="- add MainTableViewCell" />
     <MESSAGE value="- add MainModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add MainModel" />
+    <MESSAGE value="- add picker Photo and Camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add picker Photo and Camera" />
   </component>
 </project>

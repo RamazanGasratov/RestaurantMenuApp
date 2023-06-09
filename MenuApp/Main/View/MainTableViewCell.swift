@@ -20,6 +20,12 @@ class MainTableViewCell: UITableViewCell {
         setupConstraints()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageViewRest.layer.cornerRadius = imageViewRest.frame.size.height / 2
+        imageViewRest.clipsToBounds = true
+    }
+    
     // MARK: Constraints
     private func setupConstraints(){
        
@@ -40,14 +46,6 @@ class MainTableViewCell: UITableViewCell {
             imageViewRest.widthAnchor.constraint(equalTo: imageViewRest.heightAnchor, multiplier: 1)
         ])
     }
-    
-    private func setupView() {
-        
-    }
-    
-//    public setConfiguration() {
-//        
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -6,9 +6,20 @@
 //
 
 import UIKit
+import RealmSwift
+protocol PlaceViewControllerProtocol: AnyObject {
+    func newPlace(name: String, location: String?, type: String?, image: UIImage?, restorantImage: String?)
+}
+
 class PlaceViewController: UIViewController {
     
+    var currentPlace: ModelMain?
+    
     private lazy var topImage = UIImageView()
+    
+    weak var delegat: PlaceViewControllerProtocol?
+    
+    var imageChang = false
     
     private lazy var nameView = CustomTextFeildView(text: "Name", placeHolder: "Place name")
     private lazy var locationView = CustomTextFeildView(text: "Location", placeHolder: "Place location")
@@ -16,12 +27,17 @@ class PlaceViewController: UIViewController {
     lazy var stackView = UIStackView(axis: .vertical, distribution: .equalSpacing, spacing: 10, views: [topImage, nameView, locationView, tupeView])
     lazy var scrollView = UIScrollView()
     
+    let titleForTitle = "Save"
+
+   lazy var rightButton = UIBarButtonItem(title: titleForTitle, style: .done, target: self, action: #selector(createPlace))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationBar()
         setupConstraints()
         setupKeyboardHiding()
+        setupEditScreen()
     }
     
     private func navigationBar() {
@@ -35,10 +51,10 @@ class PlaceViewController: UIViewController {
         self.navigationItem.title = "New Places"
         
         //MARK: - rightBarButtonItem
-        let titleForTitle = "Save"
-        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: titleForTitle, style: .done, target: self, action: #selector(createTimer))
-        //MARK: - rightBarButtonItem
-        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(closed))
+        navigationItem.rightBarButtonItem = rightButton
+        rightButton.isEnabled = false
+        //MARK: - leftBarButtonItem
+//        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(closed))
     }
     
     private func setupConstraints() {
@@ -48,6 +64,8 @@ class PlaceViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(appendAction(_:)))
         topImage.addGestureRecognizer(tapGesture)
         topImage.isUserInteractionEnabled = true
+        
+        nameView.textField.addTarget(self, action: #selector(textFieldChenge), for: .editingChanged)
         
         view.addSubViews(scrollView)
         scrollView.addSubViews(stackView)
@@ -67,6 +85,26 @@ class PlaceViewController: UIViewController {
             topImage.widthAnchor.constraint(equalTo: stackView.widthAnchor),
                 topImage.heightAnchor.constraint(equalTo: topImage.widthAnchor)
         ])
+    }
+    
+    private func setupEditScreen() {
+        if currentPlace != nil {
+            setupNavigatinBarEditScreen()
+            imageChang = true
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
+            
+            topImage.image = image
+            topImage.contentMode = .scaleAspectFill
+            nameView.textField.text = currentPlace?.name
+            locationView.textField.text = currentPlace?.location
+            tupeView.textField.text = currentPlace?.type
+        }
+    }
+    
+    private func setupNavigatinBarEditScreen() {
+        
+        title = currentPlace?.name
+        rightButton.isEnabled = true
     }
     
     private func setupKeyboardHiding() {
@@ -100,21 +138,61 @@ class PlaceViewController: UIViewController {
         
         present(alert, animated: true)
     }
-    
+
     @objc func keyboardWillShow(sender: NSNotification) {
-        stackView.frame.origin.y = stackView.frame.origin.y - 60
+        stackView.frame.origin.y = stackView.frame.origin.y - 200
     }
     
     @objc func keyboardWillHide(sender: NSNotification) {
-        stackView.frame.origin.y = stackView.frame.origin.y + 60
+        stackView.frame.origin.y = stackView.frame.origin.y + 200
     }
     
-    @objc private func createTimer() {
-        print(#function)
+    @objc private func createPlace() {
+        
+        
+        var image: UIImage?
+        
+        if imageChang {
+            image = topImage.image
+        } else {
+            image = UIImage(named: "imagePlaceholder")
+        }
+        
+        let imageData = image?.pngData()
+        
+        let newPlace = ModelMain(name: nameView.textField.text!,
+                                 location: locationView.textField.text,
+                                 type: tupeView.textField.text,
+                                 imageData: imageData)
+        if currentPlace != nil {
+            try! realm.write {
+                currentPlace?.name = newPlace.name
+                currentPlace?.location = newPlace.location
+                currentPlace?.type = newPlace.type
+                currentPlace?.imageData = newPlace.imageData
+            }
+        } else {
+            StorageManger.saveObject(newPlace)
+        }
+        
+        delegat?.newPlace(name: nameView.textField.text!,
+                           location: locationView.textField.text,
+                           type: tupeView.textField.text,
+                           image: image,
+                           restorantImage: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func closed() {
         dismiss(animated: true)
+    }
+    
+    @objc func textFieldChenge() {
+        if nameView.textField.text?.isEmpty == false {
+            rightButton.isEnabled = true
+        } else {
+            rightButton.isEnabled = false
+        }
     }
     
 }
@@ -135,6 +213,8 @@ extension PlaceViewController: UIImagePickerControllerDelegate, UINavigationCont
         self.topImage.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         self.topImage.contentMode = .scaleAspectFill
         self.topImage.clipsToBounds = true
+        imageChang = true
         dismiss(animated: true)
     }
 }
+

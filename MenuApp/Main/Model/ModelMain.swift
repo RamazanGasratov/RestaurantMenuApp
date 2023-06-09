@@ -5,24 +5,36 @@
 //  Created by macbook on 07.06.2023.
 //
 
-import Foundation
+import RealmSwift
 
-struct ModelMain {
-    var name: String
-    var location: String
-    var type: String
-    var image: String
+class ModelMain: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
+    @objc dynamic var date = Date()
     
-  static  let restaurantNames = [
-         "Kitchen", "Bonsai", "Вкусочка", "Индокитай", "Sultan Burger", "Speak Easy", "Классик", "Националь", "Вкусные истории", "Асса", "Рандеву"]
+    convenience init(name: String, location: String?, type: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
+    }
+}
+
+enum PresentStyle: Int, CaseIterable {
+    case folder = 0
+    case words = 1
     
-   static func getPlaces() -> [ModelMain] {
-        var placesModel = [ModelMain]()
-        
-        for places in restaurantNames {
-            placesModel.append(ModelMain(name: places, location: "Moscow", type: "Restorant", image: places))
+    var text: String {
+        get {
+            switch self {
+            case .folder:
+                return "Date"
+            case .words:
+                return "Name"
+            }
         }
-        
-        return placesModel
     }
 }
