@@ -142,7 +142,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.typeLabel.text = place.type
         cell.nameRestLabel.text = place.name
         cell.imageViewRest.image = UIImage(data: place.imageData!)//??
-
+        cell.customStars.rating = Int(place.rating)
         return cell
     }
     
@@ -155,6 +155,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let place: ModelMain
         
         if isFiltering {
@@ -165,18 +167,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let placeVC = PlaceViewController()
         placeVC.currentPlace = place
+        placeVC.delegat = self
         navigationController?.pushViewController(placeVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         85
     }
-    
 }
 
 extension MainViewController: PlaceViewControllerProtocol {
-    func newPlace(name: String, location: String?, type: String?, image: UIImage?, restorantImage: String?) {
-        //TODO: - refactoring
+    func relodData() {
         tableView.reloadData()
     }
 }

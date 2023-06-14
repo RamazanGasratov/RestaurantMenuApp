@@ -11,6 +11,9 @@
 		FA2B90252A3240DC00ECC1C1 /* StoregManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B90242A3240DC00ECC1C1 /* StoregManager.swift */; };
 		FA40B2DC2A3369DB00823B64 /* SegmentCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40B2DB2A3369DB00823B64 /* SegmentCustom.swift */; };
 		FA40B2DE2A337C6100823B64 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40B2DD2A337C6100823B64 /* UIViewController+Ext.swift */; };
+		FA49BBD72A399808007E562B /* CustomStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49BBD62A399808007E562B /* CustomStars.swift */; };
+		FA49BBDA2A39BA0A007E562B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49BBD92A39BA0A007E562B /* MapViewController.swift */; };
+		FACF287E2A389915009EAAC1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF287D2A389915009EAAC1 /* RatingControl.swift */; };
 		FAF472812A30657100824AFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472802A30657100824AFB /* AppDelegate.swift */; };
 		FAF472832A30657100824AFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472822A30657100824AFB /* SceneDelegate.swift */; };
 		FAF472852A30657100824AFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF472842A30657100824AFB /* MainViewController.swift */; };
@@ -31,6 +34,9 @@
 		FA2B90242A3240DC00ECC1C1 /* StoregManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregManager.swift; sourceTree = "<group>"; };
 		FA40B2DB2A3369DB00823B64 /* SegmentCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentCustom.swift; sourceTree = "<group>"; };
 		FA40B2DD2A337C6100823B64 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		FA49BBD62A399808007E562B /* CustomStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStars.swift; sourceTree = "<group>"; };
+		FA49BBD92A39BA0A007E562B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FACF287D2A389915009EAAC1 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		FAF4727D2A30657100824AFB /* MenuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF472802A30657100824AFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF472822A30657100824AFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA49BBD82A39B9F0007E562B /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				FA49BBD92A39BA0A007E562B /* MapViewController.swift */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
 		FAF472742A30657100824AFB = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +110,7 @@
 		FAF4727F2A30657100824AFB /* MenuApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA49BBD82A39B9F0007E562B /* MapKit */,
 				FA40B2DB2A3369DB00823B64 /* SegmentCustom.swift */,
 				FA2B90242A3240DC00ECC1C1 /* StoregManager.swift */,
 				FA40B2DD2A337C6100823B64 /* UIViewController+Ext.swift */,
@@ -141,6 +156,7 @@
 		FAF4729F2A30DBB200824AFB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA49BBD62A399808007E562B /* CustomStars.swift */,
 				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
 			);
 			path = View;
@@ -166,6 +182,7 @@
 		FAF472A42A30DF7000824AFB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FACF287D2A389915009EAAC1 /* RatingControl.swift */,
 				FAF472A52A30DF9500824AFB /* CustomTextFeildView.swift */,
 			);
 			path = View;
@@ -287,6 +304,7 @@
 			files = (
 				FA2B90252A3240DC00ECC1C1 /* StoregManager.swift in Sources */,
 				FAF472A32A30DBFC00824AFB /* PlaceViewController.swift in Sources */,
+				FA49BBD72A399808007E562B /* CustomStars.swift in Sources */,
 				FA40B2DE2A337C6100823B64 /* UIViewController+Ext.swift in Sources */,
 				FAF4729A2A30CB0800824AFB /* UILabel + Ext.swift in Sources */,
 				FAF4729D2A30D47E00824AFB /* ModelMain.swift in Sources */,
@@ -295,7 +313,9 @@
 				FAF472982A30CB0100824AFB /* StackView+Ext.swift in Sources */,
 				FAF472812A30657100824AFB /* AppDelegate.swift in Sources */,
 				FAF472962A306C9E00824AFB /* MainTableViewCell.swift in Sources */,
+				FACF287E2A389915009EAAC1 /* RatingControl.swift in Sources */,
 				FAF472832A30657100824AFB /* SceneDelegate.swift in Sources */,
+				FA49BBDA2A39BA0A007E562B /* MapViewController.swift in Sources */,
 				FAF472A62A30DF9500824AFB /* CustomTextFeildView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

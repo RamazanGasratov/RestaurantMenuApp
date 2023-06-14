@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add Realm&#10;- add Sorted Method" />
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add SearchController" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +42,7 @@
       <workItem from="1686324515309" duration="147000" />
       <workItem from="1686324746289" duration="17000" />
       <workItem from="1686324804436" duration="108000" />
+      <workItem from="1686590474199" duration="96000" />
     </task>
     <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
       <created>1686128509250</created>
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686324875512</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- add SearchController">
+      <created>1686590559430</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686590559430</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +110,7 @@
     <MESSAGE value="- add MainModel" />
     <MESSAGE value="- add picker Photo and Camera" />
     <MESSAGE value="- add Realm&#10;- add Sorted Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add Realm&#10;- add Sorted Method" />
+    <MESSAGE value="- add SearchController" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add SearchController" />
   </component>
 </project>

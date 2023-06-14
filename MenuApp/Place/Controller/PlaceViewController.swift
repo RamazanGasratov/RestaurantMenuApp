@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 protocol PlaceViewControllerProtocol: AnyObject {
-    func newPlace(name: String, location: String?, type: String?, image: UIImage?, restorantImage: String?)
+    func relodData()
 }
 
 class PlaceViewController: UIViewController {
@@ -16,6 +16,10 @@ class PlaceViewController: UIViewController {
     var currentPlace: ModelMain?
     
     private lazy var topImage = UIImageView()
+    
+    private lazy var mapButton = UIButton()
+    
+    private var raitingControl = RatingControl()
     
     weak var delegat: PlaceViewControllerProtocol?
     
@@ -58,6 +62,9 @@ class PlaceViewController: UIViewController {
     }
     
     private func setupConstraints() {
+        mapButton.setImage(UIImage(named: "map"), for: .normal)
+        mapButton.addTarget(self, action: #selector(openMap), for: .touchUpInside)
+        
         topImage.image = UIImage(named: "Photo")
         topImage.backgroundColor = .systemGray5
         topImage.contentMode = .center
@@ -68,7 +75,8 @@ class PlaceViewController: UIViewController {
         nameView.textField.addTarget(self, action: #selector(textFieldChenge), for: .editingChanged)
         
         view.addSubViews(scrollView)
-        scrollView.addSubViews(stackView)
+        scrollView.addSubViews(stackView, raitingControl)
+        topImage.addSubViews(mapButton)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -80,10 +88,23 @@ class PlaceViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32), // Заполнение горизонтального пространства
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -250),
+//            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -250),
+            
+            raitingControl.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
+            raitingControl.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 70),
+            raitingControl.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -70),
+            raitingControl.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -50),
+            
+            mapButton.trailingAnchor.constraint(equalTo: topImage.trailingAnchor, constant: -16),
+            mapButton.bottomAnchor.constraint(equalTo: topImage.bottomAnchor, constant: -20),
+            mapButton.heightAnchor.constraint(equalToConstant: 60),
+            mapButton.widthAnchor.constraint(equalTo: mapButton.heightAnchor, multiplier: 1),
+            
             //TODO: - Переделать
             topImage.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-                topImage.heightAnchor.constraint(equalTo: topImage.widthAnchor)
+            topImage.heightAnchor.constraint(equalTo: topImage.widthAnchor),
+            
+            
         ])
     }
     
@@ -91,14 +112,15 @@ class PlaceViewController: UIViewController {
         if currentPlace != nil {
             setupNavigatinBarEditScreen()
             imageChang = true
-            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data), let rating = currentPlace?.rating else { return }
             
             topImage.image = image
             topImage.contentMode = .scaleAspectFill
             nameView.textField.text = currentPlace?.name
             locationView.textField.text = currentPlace?.location
             tupeView.textField.text = currentPlace?.type
-        }
+            raitingControl.rating = Int(rating)
+         }
     }
     
     private func setupNavigatinBarEditScreen() {
@@ -147,6 +169,13 @@ class PlaceViewController: UIViewController {
         stackView.frame.origin.y = stackView.frame.origin.y + 200
     }
     
+    @objc func openMap() {
+        let vc = MapViewController()
+        
+        present(vc, animated: true)
+        modalPresentationStyle = .none
+    }
+    
     @objc private func createPlace() {
         
         
@@ -163,23 +192,20 @@ class PlaceViewController: UIViewController {
         let newPlace = ModelMain(name: nameView.textField.text!,
                                  location: locationView.textField.text,
                                  type: tupeView.textField.text,
-                                 imageData: imageData)
+                                 imageData: imageData,
+                                 rating: Double(raitingControl.rating))
         if currentPlace != nil {
             try! realm.write {
                 currentPlace?.name = newPlace.name
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
             }
         } else {
             StorageManger.saveObject(newPlace)
         }
-        
-        delegat?.newPlace(name: nameView.textField.text!,
-                           location: locationView.textField.text,
-                           type: tupeView.textField.text,
-                           image: image,
-                           restorantImage: nil)
+        delegat?.relodData()
         navigationController?.popViewController(animated: true)
     }
     
