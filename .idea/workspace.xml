@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add MapKit" />
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- add location and Buf Fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +44,7 @@
       <workItem from="1686324804436" duration="108000" />
       <workItem from="1686590474199" duration="96000" />
       <workItem from="1686744143516" duration="210000" />
+      <workItem from="1686992820057" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
       <created>1686128509250</created>
@@ -94,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686744168085</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- add location and Buf Fix">
+      <created>1686992846872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686992846872</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +128,7 @@
     <MESSAGE value="- add Realm&#10;- add Sorted Method" />
     <MESSAGE value="- add SearchController" />
     <MESSAGE value="- add MapKit" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add MapKit" />
+    <MESSAGE value="- add location and Buf Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add location and Buf Fix" />
   </component>
 </project>
