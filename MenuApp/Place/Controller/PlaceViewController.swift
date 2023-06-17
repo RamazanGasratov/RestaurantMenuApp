@@ -171,6 +171,10 @@ class PlaceViewController: UIViewController {
     
     @objc func openMap() {
         let vc = MapViewController()
+        vc.place.name = nameView.textField.text ?? ""
+        vc.place.location = locationView.textField.text ?? ""
+        vc.place.type = tupeView.textField.text ?? ""
+        vc.place.imageData = topImage.image?.pngData()
         
         present(vc, animated: true)
         modalPresentationStyle = .none
@@ -178,14 +182,7 @@ class PlaceViewController: UIViewController {
     
     @objc private func createPlace() {
         
-        
-        var image: UIImage?
-        
-        if imageChang {
-            image = topImage.image
-        } else {
-            image = UIImage(named: "imagePlaceholder")
-        }
+        let image = imageChang ? topImage.image :  UIImage(named: "imagePlaceholder")
         
         let imageData = image?.pngData()
         
