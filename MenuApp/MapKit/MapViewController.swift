@@ -9,15 +9,27 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+   func getAddress(_ address: String?)
+}
+
 final class MapViewController: UIViewController {
     
+    var mapViewControllerDelegate: MapViewControllerDelegate? = nil
+    var inUpShow = false
+    var tag = 0
     private let mapView = MKMapView()
     private let buttonClose = UIButton()
     private let locationButton = UIButton()
+    private let doneButton = UIButton()
+    private let grearButton = UIButton()
+    private let pickerLocation = UIImageView()
+    private let currentAddressLable = UILabel(text: "", font: UIFont(name: "AppleSDGothicNeo-Regular", size: 25) ?? UIFont())
     var place = ModelMain()
     private let locationIdentifier = "locationIdentifier"
-    let locationManager = CLLocationManager()
-    let countLocation = 6000.00
+    private let locationManager = CLLocationManager()
+    private let countLocation = 6000.00
+    var location = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +40,54 @@ final class MapViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLocationServices()
+        switch tag {
+        case 1: checkLocationServices()
+        case 2: userLocation()
+        default:
+            break
+        }
     }
     
     private func setupConstraints() {
+        let configuration = UIImage.SymbolConfiguration(pointSize: 35)
+        let configurationPin = UIImage.SymbolConfiguration(pointSize: 25)
+        pickerLocation.image = UIImage(systemName: "mappin", withConfiguration: configurationPin)
+        pickerLocation.tintColor = .red
+        
+        currentAddressLable.textAlignment = .center
+        currentAddressLable.numberOfLines = 0
+        
+        doneButton.setTitle("DONE", for: .normal)
+        doneButton.setTitleColor(.black, for: .normal)
+        doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        doneButton.isHidden = false
+        
+        grearButton.setImage(UIImage(systemName: "mappin.and.ellipse", withConfiguration: configuration), for: .normal)
+        grearButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        grearButton.isHidden = false
         
         buttonClose.setImage(UIImage(named: "camcel"), for: .normal)
         buttonClose.addTarget(self, action: #selector(closeVC), for: .touchUpInside)
         
-        let configuration = UIImage.SymbolConfiguration(pointSize: 35)
         locationButton.setImage(UIImage(systemName: "location.circle", withConfiguration: configuration), for: .normal)
         locationButton.tintColor = .black
         locationButton.addTarget(self, action: #selector(locatonUser), for: .touchUpInside)
         
-        view.addSubViews(mapView, buttonClose, locationButton)
+        view.addSubViews(mapView, buttonClose, locationButton, pickerLocation, currentAddressLable, doneButton, grearButton)
    
         NSLayoutConstraint.activate([
+            
+            currentAddressLable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            currentAddressLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            currentAddressLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            grearButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            grearButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            grearButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -58,7 +102,10 @@ final class MapViewController: UIViewController {
             locationButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
             locationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             locationButton.heightAnchor.constraint(equalToConstant: 30),
-            locationButton.widthAnchor.constraint(equalTo: locationButton.heightAnchor, multiplier: 1)
+            locationButton.widthAnchor.constraint(equalTo: locationButton.heightAnchor, multiplier: 1),
+            
+            pickerLocation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pickerLocation.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -15),
         ])
     }
     
@@ -96,7 +143,9 @@ final class MapViewController: UIViewController {
     }
     
     private func checkLocationServices() {
-        
+        currentAddressLable.isHidden = inUpShow
+        doneButton.isHidden = inUpShow
+        grearButton.isHidden = false
         if CLLocationManager.locationServicesEnabled() {
             setupLocationManager()
             checkLocationAutorization()
@@ -111,6 +160,23 @@ final class MapViewController: UIViewController {
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func userLocation() {
+        currentAddressLable.isHidden = inUpShow
+        doneButton.isHidden = inUpShow
+        grearButton.isHidden = true
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: countLocation,
+                                            longitudinalMeters: countLocation)
+            mapView.setRegion(region, animated: true)
+    }
+    
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
     private func checkLocationAutorization() {
@@ -141,10 +207,16 @@ final class MapViewController: UIViewController {
     
     @objc private func locatonUser() {
         if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: countLocation,
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: countLocation,
                                             longitudinalMeters: countLocation)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    @objc private func doneButtonPressed() {
+        mapViewControllerDelegate?.getAddress(currentAddressLable.text)
+        dismiss(animated: true)
     }
 }
 
@@ -167,6 +239,35 @@ extension MapViewController: MKMapViewDelegate {
             annotationView?.rightCalloutAccessoryView = imageView
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { placemarks, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            
+            let placemark = placemarks.first
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            DispatchQueue.main.async {
+                if streetName != nil && buildNumber != nil {
+                    self.currentAddressLable.text = "\(streetName!), \(buildNumber!)"
+                } else if streetName != nil {
+                    self.currentAddressLable.text = "\(streetName!)"
+                } else {
+                    self.currentAddressLable.text = ""
+                }
+            }
+        }
     }
 }
 

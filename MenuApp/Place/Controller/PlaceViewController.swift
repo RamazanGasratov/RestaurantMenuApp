@@ -7,6 +7,8 @@
 
 import UIKit
 import RealmSwift
+import CoreLocation
+
 protocol PlaceViewControllerProtocol: AnyObject {
     func relodData()
 }
@@ -18,10 +20,12 @@ class PlaceViewController: UIViewController {
     private lazy var topImage = UIImageView()
     
     private lazy var mapButton = UIButton()
+    private lazy var locationButton = UIButton()
     
     private var raitingControl = RatingControl()
     
     weak var delegat: PlaceViewControllerProtocol?
+    private let locationManager = CLLocationManager()
     
     var imageChang = false
     
@@ -57,13 +61,16 @@ class PlaceViewController: UIViewController {
         //MARK: - rightBarButtonItem
         navigationItem.rightBarButtonItem = rightButton
         rightButton.isEnabled = false
-        //MARK: - leftBarButtonItem
-//        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(closed))
     }
     
     private func setupConstraints() {
         mapButton.setImage(UIImage(named: "map"), for: .normal)
         mapButton.addTarget(self, action: #selector(openMap), for: .touchUpInside)
+        
+        let configurationPin = UIImage.SymbolConfiguration(pointSize: 20)
+        locationButton.setImage(UIImage(systemName: "mappin.circle", withConfiguration: configurationPin), for: .normal)
+        locationButton.addTarget(self, action: #selector(openMapLocation), for: .touchUpInside)
+        locationButton.tintColor = .black
         
         topImage.image = UIImage(named: "Photo")
         topImage.backgroundColor = .systemGray5
@@ -77,6 +84,7 @@ class PlaceViewController: UIViewController {
         view.addSubViews(scrollView)
         scrollView.addSubViews(stackView, raitingControl)
         topImage.addSubViews(mapButton)
+        locationView.addSubViews(locationButton)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -100,11 +108,14 @@ class PlaceViewController: UIViewController {
             mapButton.heightAnchor.constraint(equalToConstant: 60),
             mapButton.widthAnchor.constraint(equalTo: mapButton.heightAnchor, multiplier: 1),
             
+            locationButton.trailingAnchor.constraint(equalTo: locationView.trailingAnchor, constant: -5),
+            locationButton.topAnchor.constraint(equalTo: locationView.topAnchor, constant: -5),
+            locationButton.heightAnchor.constraint(equalToConstant: 24),
+            locationButton.widthAnchor.constraint(equalTo: locationButton.heightAnchor, multiplier: 1),
+            
             //TODO: - Переделать
             topImage.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             topImage.heightAnchor.constraint(equalTo: topImage.widthAnchor),
-            
-            
         ])
     }
     
@@ -124,7 +135,6 @@ class PlaceViewController: UIViewController {
     }
     
     private func setupNavigatinBarEditScreen() {
-        
         title = currentPlace?.name
         rightButton.isEnabled = true
     }
@@ -175,6 +185,20 @@ class PlaceViewController: UIViewController {
         vc.place.location = locationView.textField.text ?? ""
         vc.place.type = tupeView.textField.text ?? ""
         vc.place.imageData = topImage.image?.pngData()
+        vc.inUpShow = true
+        vc.tag = 1
+        
+        present(vc, animated: true)
+        modalPresentationStyle = .none
+    }
+    
+    @objc func openMapLocation() {
+        let vc = MapViewController()
+        guard let location = locationManager.location?.coordinate else { return }
+        vc.location = location
+        vc.mapViewControllerDelegate = self
+        vc.inUpShow = false
+        vc.tag = 2
         
         present(vc, animated: true)
         modalPresentationStyle = .none
@@ -241,3 +265,8 @@ extension PlaceViewController: UIImagePickerControllerDelegate, UINavigationCont
     }
 }
 
+extension PlaceViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        locationView.textField.text = address
+    }
+}
