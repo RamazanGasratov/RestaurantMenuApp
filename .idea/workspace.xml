@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- full project">
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- full project fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +51,9 @@
       <workItem from="1687097883951" duration="25000" />
       <workItem from="1687196618611" duration="48000" />
       <workItem from="1687196879693" duration="80000" />
+      <workItem from="1687196985890" duration="103000" />
+      <workItem from="1687197239017" duration="59000" />
+      <workItem from="1687198132756" duration="68000" />
     </task>
     <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
       <created>1686128509250</created>
@@ -129,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687196655854</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- full project fix">
+      <created>1687197016313</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687197016313</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +169,7 @@
     <MESSAGE value="- user Location" />
     <MESSAGE value="- bug Fix" />
     <MESSAGE value="- full project" />
-    <option name="LAST_COMMIT_MESSAGE" value="- full project" />
+    <MESSAGE value="- full project fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="- full project fix" />
   </component>
 </project>
