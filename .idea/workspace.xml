@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- bug Fix" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2QrwYRurpRk04qSoDVZ0XzIF9uA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="" />
+      <created>1686125057352</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686125057352</updated>
+      <workItem from="1686125062403" duration="52000" />
+      <workItem from="1686128465687" duration="55000" />
+      <workItem from="1686149493413" duration="38000" />
+      <workItem from="1686151103776" duration="293000" />
+      <workItem from="1686228451895" duration="56000" />
+      <workItem from="1686324515309" duration="147000" />
+      <workItem from="1686324746289" duration="17000" />
+      <workItem from="1686324804436" duration="108000" />
+      <workItem from="1686590474199" duration="96000" />
+      <workItem from="1686744143516" duration="210000" />
+      <workItem from="1686992820057" duration="35000" />
+      <workItem from="1687000382717" duration="25000" />
+      <workItem from="1687097883951" duration="25000" />
+    </task>
+    <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
+      <created>1686128509250</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686128509250</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- add MainTableViewCell">
+      <created>1686149523397</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686149523397</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- add MainModel">
+      <created>1686151117542</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686151117542</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- add picker Photo and Camera">
+      <created>1686228494138</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686228494138</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- add Realm&#10;- add Sorted Method">
+      <created>1686324875512</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686324875512</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- add SearchController">
+      <created>1686590559430</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686590559430</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- add MapKit">
+      <created>1686744168085</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686744168085</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- add location and Buf Fix">
+      <created>1686992846872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686992846872</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- user Location">
+      <created>1687000400597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687000400597</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- bug Fix">
+      <created>1687097902102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687097902102</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- add Image and LaunchScreen" />
+    <MESSAGE value="- add MainTableViewCell" />
+    <MESSAGE value="- add MainModel" />
+    <MESSAGE value="- add picker Photo and Camera" />
+    <MESSAGE value="- add Realm&#10;- add Sorted Method" />
+    <MESSAGE value="- add SearchController" />
+    <MESSAGE value="- add MapKit" />
+    <MESSAGE value="- add location and Buf Fix" />
+    <MESSAGE value="- user Location" />
+    <MESSAGE value="- bug Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="- bug Fix" />
+  </component>
+</project>
