@@ -89,6 +89,37 @@
 			path = MapKit;
 			sourceTree = "<group>";
 		};
+		FAE445682A40BDD000167493 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA40B2DB2A3369DB00823B64 /* SegmentCustom.swift */,
+				FA40B2DD2A337C6100823B64 /* UIViewController+Ext.swift */,
+				FAF472972A30CB0100824AFB /* StackView+Ext.swift */,
+				FAF472992A30CB0800824AFB /* UILabel + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAE445692A40BE7500167493 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FAF472802A30657100824AFB /* AppDelegate.swift */,
+				FAF472822A30657100824AFB /* SceneDelegate.swift */,
+				FAF472892A30657300824AFB /* Assets.xcassets */,
+				FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */,
+			);
+			name = Support;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FAE4456A2A40C2D700167493 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				FA2B90242A3240DC00ECC1C1 /* StoregManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
 		FAF472742A30657100824AFB = {
 			isa = PBXGroup;
 			children = (
@@ -111,18 +142,12 @@
 			isa = PBXGroup;
 			children = (
 				FA49BBD82A39B9F0007E562B /* MapKit */,
-				FA40B2DB2A3369DB00823B64 /* SegmentCustom.swift */,
-				FA2B90242A3240DC00ECC1C1 /* StoregManager.swift */,
-				FA40B2DD2A337C6100823B64 /* UIViewController+Ext.swift */,
+				FAE4456A2A40C2D700167493 /* RealmManager */,
 				FAF472A02A30DBC500824AFB /* Place */,
-				FAF472802A30657100824AFB /* AppDelegate.swift */,
-				FAF472822A30657100824AFB /* SceneDelegate.swift */,
 				FAF472942A306C7E00824AFB /* Main */,
-				FAF472892A30657300824AFB /* Assets.xcassets */,
-				FAF4728B2A30657300824AFB /* LaunchScreen.storyboard */,
+				FAE445692A40BE7500167493 /* Support */,
+				FAE445682A40BDD000167493 /* Extensions */,
 				FAF4728E2A30657300824AFB /* Info.plist */,
-				FAF472972A30CB0100824AFB /* StackView+Ext.swift */,
-				FAF472992A30CB0800824AFB /* UILabel + Ext.swift */,
 			);
 			path = MenuApp;
 			sourceTree = "<group>";
@@ -149,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF472842A30657100824AFB /* MainViewController.swift */,
+				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -157,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				FA49BBD62A399808007E562B /* CustomStars.swift */,
-				FAF472952A306C9E00824AFB /* MainTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,8 +479,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MenuApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +497,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Ramazan-Gasratov.MenuApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,8 +510,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MenuApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -498,6 +528,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Ramazan-Gasratov.MenuApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

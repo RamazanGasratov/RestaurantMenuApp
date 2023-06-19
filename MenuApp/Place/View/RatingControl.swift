@@ -8,7 +8,7 @@
 import UIKit
 
 final class RatingControl: UIStackView {
-
+    
     private var ratingButtons = [UIButton]()
     
     var rating = 0 {
@@ -29,7 +29,7 @@ final class RatingControl: UIStackView {
         }
     }
     
-//MARK: - Initialization
+    //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -47,7 +47,7 @@ final class RatingControl: UIStackView {
             button.removeFromSuperview()
         }
         ratingButtons.removeAll()
-
+        
         //Load button image
         
         let filledStar = UIImage(named: "filledStar")
@@ -57,12 +57,12 @@ final class RatingControl: UIStackView {
         for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
-           //Set the button image
+            //Set the button image
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
             button.setImage(highlightedStar, for: .highlighted)
             button.setImage(highlightedStar, for: [.highlighted, .selected])
-
+            
             //Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
             

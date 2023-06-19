@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomTextFeildView: UIView {
-   
+    
     lazy var textField: UITextField = UITextField()
     private lazy var nameLabel: UILabel = UILabel(text: "", font: UIFont(name:"AppleSDGothicNeo-Thin" , size: 20) ?? UIFont())
     
@@ -26,7 +26,7 @@ class CustomTextFeildView: UIView {
         textField.clipsToBounds = true
         textField.returnKeyType = .done
         textField.delegate = self
-        //TODO: - почему текст не слева как положено 
+        //TODO: - почему текст не слева как положено
         textField.textAlignment = .center
         nameLabel.text = text
         

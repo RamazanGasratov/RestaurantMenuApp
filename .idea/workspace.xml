@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- user Location" />
+    <list default="true" id="94ec200c-a926-4812-af75-d1bdae46cc31" name="Changes" comment="- bug Fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +46,7 @@
       <workItem from="1686744143516" duration="210000" />
       <workItem from="1686992820057" duration="35000" />
       <workItem from="1687000382717" duration="25000" />
+      <workItem from="1687097883951" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="- add Image and LaunchScreen">
       <created>1686128509250</created>
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687000400597</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- bug Fix">
+      <created>1687097902102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687097902102</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,7 @@
     <MESSAGE value="- add MapKit" />
     <MESSAGE value="- add location and Buf Fix" />
     <MESSAGE value="- user Location" />
-    <option name="LAST_COMMIT_MESSAGE" value="- user Location" />
+    <MESSAGE value="- bug Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="- bug Fix" />
   </component>
 </project>

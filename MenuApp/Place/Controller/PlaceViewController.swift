@@ -36,15 +36,15 @@ class PlaceViewController: UIViewController {
     lazy var scrollView = UIScrollView()
     
     let titleForTitle = "Save"
-
-   lazy var rightButton = UIBarButtonItem(title: titleForTitle, style: .done, target: self, action: #selector(createPlace))
+    
+    lazy var rightButton = UIBarButtonItem(title: titleForTitle, style: .done, target: self, action: #selector(createPlace))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationBar()
         setupConstraints()
-        setupKeyboardHiding()
+//        setupKeyboardHiding()
         setupEditScreen()
     }
     
@@ -95,8 +95,7 @@ class PlaceViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 5),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32), // Заполнение горизонтального пространства
-//            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -250),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32),
             
             raitingControl.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
             raitingControl.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 70),
@@ -131,7 +130,7 @@ class PlaceViewController: UIViewController {
             locationView.textField.text = currentPlace?.location
             tupeView.textField.text = currentPlace?.type
             raitingControl.rating = Int(rating)
-         }
+        }
     }
     
     private func setupNavigatinBarEditScreen() {
@@ -170,7 +169,7 @@ class PlaceViewController: UIViewController {
         
         present(alert, animated: true)
     }
-
+    
     @objc func keyboardWillShow(sender: NSNotification) {
         stackView.frame.origin.y = stackView.frame.origin.y - 200
     }
